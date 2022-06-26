@@ -32,5 +32,8 @@
 </tr>
 </c:forEach>
 </table>
+<a href="register"></a><button type="button" name="editclass" class="btn btn-warning btn-circle btn-sm edit_button">
+			                               Back to Registration
+			                                  </button></a>
 </body>
 </html>
