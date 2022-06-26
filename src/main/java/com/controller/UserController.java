@@ -32,6 +32,19 @@ public class UserController {
 	}
 	@PostMapping("/saveuser")
 	public String saveUser(UserBean student,Model model) {
+		boolean p=false;
+		UserBean dbUser=userdao.getStudentByName(student.getStudentName(),student.getActivityId());
+		if(dbUser!=null) {
+			if(((student.getStudentName()).equalsIgnoreCase(dbUser.getStudentName())==true) && (student.getActivityId()==dbUser.getActivityId())){
+				p=true;
+			}
+		}
+		if(p==true) {
+			 model.addAttribute("student", userdao.getUserById());
+			 model.addAttribute("activity", activitydao.getAllActivity());
+			model.addAttribute("error","You have already register for that sport activity!!");
+		}
+		else {	
 		int registerId = (int) (Math.random() * 1000000);
 		userdao.insertStudent(student);
 		model.addAttribute("success","Congratulations!!!Your registration was successfully completed.");
@@ -39,6 +52,7 @@ public class UserController {
 	     model.addAttribute("id",registerId);
 	    model.addAttribute("student", userdao.getUserById());
 	    model.addAttribute("activity", activitydao.getAllActivity());
+		}
 		return "Register";
 	}
 }

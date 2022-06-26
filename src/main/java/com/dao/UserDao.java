@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-
+import com.bean.ActivityBean;
 import com.bean.UserBean;
 
 @Repository
@@ -27,5 +27,16 @@ public class UserDao {
 		List<UserBean> student = stmt.query("select u.*,a.activityName from student u,activity a where u.activityid = a.activityid  ", new BeanPropertyRowMapper<UserBean>(UserBean.class));
 
 		return student;
+	}
+	public UserBean getStudentByName(String studentName,int activityId) {
+		UserBean dbActivity = null;
+
+		try {
+			dbActivity = stmt.queryForObject("select * from student where lower(studentname) = lower(?) and activityid=? ",
+					new BeanPropertyRowMapper<UserBean>(UserBean.class), new Object[] { studentName,activityId });
+		}catch(Exception e) {
+			
+		}
+		return dbActivity;
 	}
 }

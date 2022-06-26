@@ -9,6 +9,7 @@
 </head>
 <body>
 <h2 style="color:green">${success }</h2>
+<h2 style="color:red">${error }</h2>
 <h4>Your Registration Id is ${id }</h4>
 
 <table border="2">
