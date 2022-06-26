@@ -6,7 +6,7 @@ public class UserBean {
 	private int studentId;
 	private String studentName;
 	private Date dob;
-	private int age;
+	private String age;
 	private int activityId;
 	private String activityName;
 	private int amount;
@@ -39,10 +39,11 @@ public class UserBean {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public int getAge() {
+	
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	public int getActivityId() {

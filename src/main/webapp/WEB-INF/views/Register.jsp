@@ -15,6 +15,7 @@
 <tr>
 <th>Student Name</th>
 <th>Date of Birth</th>
+<th>Age</th>
 <th>Registration Date</th>
 <th>Sport Activity</th>
 <th>Amount</th>
@@ -23,6 +24,7 @@
 <tr>
 <td>${s.studentName }</td>
 <td>${s.dob }</td>
+<td>${s.age }</td>
 <td>${s.registerDate }</td>
 <td>${s.activityName }</td>
 <td>${s.amount }</td>

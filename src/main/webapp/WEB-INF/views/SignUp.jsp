@@ -113,7 +113,7 @@ return false;
                   </div>
                   <div class="form-group">
                     <label for="age" >Age</label>
-                    <input type="text" name="age" id="age" class="form-control" placeholder="Age" autocomplete="off" disabled>
+                    <input type="text" name="age" id="age" class="form-control" placeholder="Age" autocomplete="off" >
                   </div>
                     <div class="form-group">
                     <label for="registerDate">Date Of Registration</label>
