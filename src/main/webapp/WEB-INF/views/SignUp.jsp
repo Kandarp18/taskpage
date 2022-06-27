@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/login.css">
    <link rel="stylesheet" type="text/css" media="screen" href="jquery-ui.css" />
- 
+  <jsp:include page="AllCss.jsp"></jsp:include>
 <script type="text/javascript">
 function formatDate(date){
 var d = new Date(date),
@@ -105,7 +105,7 @@ return false;
               <form action="saveuser" method="post">
               <div class="form-group">
                     <label for="studentName" >StudentName</label>
-                    <input type="text" name="studentName" id="studentName" class="form-control" placeholder="Your Name" required>
+                    <input type="text" name="studentName" id="studentName" class="form-control" onkeypress="return allowOnlyLetters(event,this);" placeholder="Your Name" required>
                   </div>
                    <div class="form-group">
                     <label for="dateOfBirth" >Date Of Birth</label>
@@ -116,9 +116,9 @@ return false;
                     <input type="text" name="age" id="age" class="form-control" placeholder="Age" autocomplete="off" >
                   </div>
                     <div class="form-group">
-                    <label for="registerDate">Date Of Registration</label>
-                    <input type="datetime-local" name="registerDate" id="registerDate"  class="form-control datepicker"  required data-parsley-trigger="keyup" maxlength="10" placeholder="Date of Registration">
-                  </div>
+                        <label for="registerDate">Registration Date</label>
+                        <input type="date" name="registerDate" id="subject_exam_datetime" class="form-control" readonly="" required="" data-parsley-trigger="keyup">
+                    </div>
                      
                    
                    <div class="form-group">
@@ -133,10 +133,10 @@ return false;
                   
                   <div class="form-group">
                     <label for="amount" >Registration Amount</label>
-                    <input type="text" name="amount" id="amount" class="form-control" placeholder="Amount" value="100" readonly>
+                    <input type="text" name="amount" id="amount" class="form-control" placeholder="Amount" value=100 readonly>
                   </div>
                   
-                  <input id="login"  type="submit" value="Register" >
+                  <input id="login" type="submit" value="Register" >
                   <input id="clear" type="reset" value="Cancel" >
                 </form>
             
@@ -157,24 +157,37 @@ return false;
   <script type="text/javascript" src="vendor/datetimepicker/bootstrap-datetimepicker.js"></script>
   <script type="text/javascript" src="vendor/bootstrap-select/bootstrap-select.min.js"></script>
   <script type="text/javascript" src="vendor/parsley/dist/parsley.min.js"></script>
-  <script>
-$(document).ready(function(){
+<script>
 
     var date = new Date();
     date.setDate(date.getDate());
-    $("#registerDate").datetimepicker({
+    $("#subject_exam_datetime").datetimepicker({
         startDate: date,
         format: 'yyyy-mm-dd',
         autoclose: true
     });
-
-    $('#registerDate').datetimepicker({
-        startDate: date,
-        format: 'yyyy-mm-dd',
-        autoclose: true
-    });
-
-
+   
+</script>
+<script>
+function allowOnlyLetters(e, t)   
+{    
+   if (window.event)    
+   {    
+      var charCode = window.event.keyCode;    
+   }    
+   else if (e)   
+   {    
+      var charCode = e.which;    
+   }    
+   else { return true; }    
+   if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))    
+       return true;    
+   else  
+   {    
+      alert("Please enter only alphabets");    
+      return false;    
+   }           
+} 
 </script>
 </body>
 </html>

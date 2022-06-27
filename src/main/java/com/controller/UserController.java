@@ -23,11 +23,16 @@ public class UserController {
   	ActivityDao activitydao;
   @Autowired
 	UserDao userdao;
-	
+  @GetMapping("/")
+	public String register() {
+		
+		return "redirect:/register";
+	}
 	@GetMapping("/register")
 	public String signUp(Model model) {
 		List<ActivityBean> activity = activitydao.getAllActivity();
 		model.addAttribute("activity", activity);
+		model.addAttribute("a", userdao.getUserById());
 		return "SignUp";
 	}
 	@PostMapping("/saveuser")

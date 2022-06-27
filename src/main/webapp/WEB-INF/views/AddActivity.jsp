@@ -27,7 +27,7 @@
               <form action="saveactivity" method="post">
               <div class="form-group">
                     <label for="activityName" >Activity Name</label>
-                    <input type="text" name="activityName" id="activityName" class="form-control" placeholder="Sport Activity Name" required>
+                    <input type="text" name="activityName" id="activityName" onkeypress="return allowOnlyLetters(event,this);" class="form-control" placeholder="Sport Activity Name" required>
                   </div>
                   
                   
@@ -48,6 +48,26 @@
      
     </div>
   </main>
-
+<script>
+function allowOnlyLetters(e, t)   
+{    
+   if (window.event)    
+   {    
+      var charCode = window.event.keyCode;    
+   }    
+   else if (e)   
+   {    
+      var charCode = e.which;    
+   }    
+   else { return true; }    
+   if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))    
+       return true;    
+   else  
+   {    
+      alert("Please enter only alphabets");    
+      return false;    
+   }           
+} 
+</script>
 </body>
 </html>

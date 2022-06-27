@@ -24,7 +24,7 @@ public class UserDao {
 	
 	public List<UserBean> getUserById() {
 
-		List<UserBean> student = stmt.query("select u.*,a.activityName from student u,activity a where u.activityid = a.activityid  ", new BeanPropertyRowMapper<UserBean>(UserBean.class));
+		List<UserBean> student = stmt.query("select u.*,a.activityName,a.amount from student u,activity a where u.activityid = a.activityid  ", new BeanPropertyRowMapper<UserBean>(UserBean.class));
 
 		return student;
 	}

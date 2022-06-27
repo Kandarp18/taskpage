@@ -11,14 +11,13 @@ public class UserBean {
 	private String activityName;
 	private int amount;
 	private int registerId;
-	private String registerDate;
+	private Date registerDate;
 	
 
-	
-	public String getRegisterDate() {
+	public Date getRegisterDate() {
 		return registerDate;
 	}
-	public void setRegisterDate(String registerDate) {
+	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
 	}
 	public int getStudentId() {
