@@ -30,5 +30,9 @@
 </tr>
 </c:forEach>
 </table>
+<br>
+<a href="addactivity"><button type="button" name="editclass" class="btn btn-warning btn-circle btn-sm edit_button">
+			                                Back to add Sport Activity
+			                                  </button></a></td>
 </body>
 </html>

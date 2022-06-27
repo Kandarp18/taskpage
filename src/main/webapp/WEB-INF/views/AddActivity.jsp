@@ -36,8 +36,8 @@
                     <input type="text" name="amount" id="amount" class="form-control" placeholder="Amount" required>
                   </div>
                   
-                  <input id="login"  type="submit" value="Add Activity" >
-                  <input id="clear" type="reset" value="Cancel" >
+                  <input id="login"  type="submit" value="Add Activity" class="btn btn-warning btn-circle btn-sm edit_button">
+                  <input id="clear" type="reset" value="Cancel" class="btn btn-warning btn-circle btn-sm edit_button">
                 </form>
            
                         </div>

@@ -37,8 +37,10 @@
                     <input type="text" name="amount" id="amount" class="form-control" value=${a.amount } required>
                   </div>
                   
-                  <input id="login"  type="submit" value="Edit Activity" >
-                  <input id="clear" type="reset" value="Cancel" >
+                  <input id="login"  type="submit" value="Edit Activity" class="btn btn-warning btn-circle btn-sm edit_button">
+                 <a href="listactivity"><button type="button" name="editclass" class="btn btn-warning btn-circle btn-sm edit_button">
+			                                Cancel
+			                                  </button></a></td>
                 </form>
            
                         </div>
